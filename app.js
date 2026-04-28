@@ -87,25 +87,29 @@ function speakOnce(text, { rate = 0.85 } = {}) {
   speechSynthesis.speak(u);
 }
 
-// Continuous-loop TTS: speak → 1s gap → speak → ...
+// Continuous-loop TTS: speak → gap → speak → ...
+// onFirstEnd fires the moment the first utterance finishes (so callers can
+// reveal a translation right as the second read begins).
 const loop = { active: false, timer: null, text: '' };
-function startLoop(text, { gapMs = 1000, rate = 0.85 } = {}) {
+function startLoop(text, { gapMs = 1000, rate = 0.85, onFirstEnd } = {}) {
   stopLoop();
   loop.active = true;
   loop.text = text;
+  let cycle = 0;
   const tick = () => {
     if (!loop.active || loop.text !== text) return;
+    cycle++;
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'en-US';
     u.rate = rate;
     const v = pickVoice();
     if (v) u.voice = v;
     u.onend = () => {
-      if (loop.active && loop.text === text) {
-        loop.timer = setTimeout(tick, gapMs);
-      }
+      if (!loop.active || loop.text !== text) return;
+      if (cycle === 1 && onFirstEnd) onFirstEnd();
+      loop.timer = setTimeout(tick, gapMs);
     };
-    speechSynthesis.cancel();
+    if (cycle === 1) speechSynthesis.cancel();
     speechSynthesis.speak(u);
   };
   tick();
@@ -215,19 +219,24 @@ function showStudyWord(word) {
     ? `“${highlightWord(ex.en, word.word)}”`
     : '';
 
-  // Korean fades in 1 second after word change.
+  // Korean reveal is timed to the TTS itself: it fades in the moment the
+  // first English read finishes, so it lands as the second read begins.
   const lede = $('.entry__lede');
   lede.style.transition = 'none';
   lede.style.opacity = '0';
   lede.textContent = word.korean || '';
   void lede.offsetHeight; // force reflow
-  setTimeout(() => {
+  const revealKorean = () => {
     lede.style.transition = 'opacity 0.6s ease';
     lede.style.opacity = '1';
-  }, 1500);
+  };
 
-  // start the TTS loop unless paused
-  if (!study.paused) startLoop(word.word, { gapMs: 1000 });
+  if (!study.paused) {
+    startLoop(word.word, { gapMs: 1000, onFirstEnd: revealKorean });
+  } else {
+    // paused: show Korean immediately so the screen isn't empty
+    revealKorean();
+  }
 }
 
 function updateStudyChrome() {
