@@ -5,3 +5,7 @@ dist/
 .env.local
 *.log
 .vite/
+
+# Source PDFs (too large for git, kept locally)
+*.pdf
+data/raw/
