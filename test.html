@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOEFL Vocas — Index</title>
+  <title>TOEFL Vocas — Test</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/chomsky" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="index">
+<body data-page="test">
   <main class="paper">
     <header class="masthead">
       <div class="masthead__rule masthead__rule--top"></div>
@@ -25,11 +25,11 @@
     </header>
 
     <nav class="mode-toggle" aria-label="View mode">
-      <a href="index.html" class="mode-toggle__item is-active">Index</a>
+      <a href="index.html" class="mode-toggle__item">Index</a>
       <span class="mode-toggle__sep">·</span>
       <a href="study.html" class="mode-toggle__item">Study</a>
       <span class="mode-toggle__sep">·</span>
-      <a href="test.html" class="mode-toggle__item">Test</a>
+      <a href="test.html" class="mode-toggle__item is-active">Test</a>
     </nav>
 
     <section class="editions" aria-label="Day selector">
@@ -38,27 +38,30 @@
     </section>
 
     <section class="dateline">
-      <span class="dateline__day">Day 1</span>
+      <span class="dateline__day">Day —</span>
       <span class="dateline__sep">·</span>
-      <span class="dateline__topic">Today's Index — 12 Words for Reading</span>
+      <span class="dateline__topic">Quiz</span>
       <span class="dateline__sep">·</span>
-      <span class="dateline__progress">3 / 12 memorized</span>
+      <span class="dateline__progress">— / —</span>
     </section>
 
-    <table class="index-table">
-      <thead>
-        <tr>
-          <th class="col-num">№</th>
-          <th class="col-word">Word</th>
-          <th class="col-meaning">한글 뜻</th>
-          <th class="col-listen" aria-label="listen"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="4" style="padding:32px;text-align:center;font-style:italic;color:var(--ink-soft)">Loading today's edition…</td></tr>
-      </tbody>
-    </table>
+    <article class="quiz" id="quiz">
+      <div class="quiz__counter">Question — of —</div>
+      <h2 class="quiz__word">&nbsp;</h2>
+      <div class="quiz__phonetic">
+        <span class="ipa">&nbsp;</span>
+        <button class="speak" type="button" aria-label="Listen">▶&nbsp;listen</button>
+      </div>
 
+      <ol class="quiz__options"></ol>
+
+      <div class="quiz__feedback" hidden></div>
+    </article>
+
+    <nav class="pager">
+      <span class="pager__count quiz__score">Score: 0</span>
+      <button class="pager__next quiz__next" type="button" hidden>Next&nbsp;▶</button>
+    </nav>
   </main>
   <script src="app.js"></script>
 </body>

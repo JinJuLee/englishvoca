@@ -10,7 +10,7 @@
   <link href="https://fonts.cdnfonts.com/css/chomsky" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="study">
   <main class="paper">
     <header class="masthead">
       <div class="masthead__rule masthead__rule--top"></div>
@@ -29,44 +29,12 @@
       <span class="mode-toggle__sep">·</span>
       <a href="study.html" class="mode-toggle__item is-active">Study</a>
       <span class="mode-toggle__sep">·</span>
-      <a href="add.html" class="mode-toggle__item">Add</a>
+      <a href="test.html" class="mode-toggle__item">Test</a>
     </nav>
 
     <section class="editions" aria-label="Day selector">
       <span class="editions__label">Editions</span>
-      <div class="editions__list">
-        <button class="edition is-active" type="button" data-day="1">01</button>
-        <button class="edition is-done" type="button" data-day="2">02</button>
-        <button class="edition is-done" type="button" data-day="3">03</button>
-        <button class="edition" type="button" data-day="4">04</button>
-        <button class="edition" type="button" data-day="5">05</button>
-        <button class="edition" type="button" data-day="6">06</button>
-        <button class="edition" type="button" data-day="7">07</button>
-        <button class="edition" type="button" data-day="8">08</button>
-        <button class="edition" type="button" data-day="9">09</button>
-        <button class="edition" type="button" data-day="10">10</button>
-        <button class="edition" type="button" data-day="11">11</button>
-        <button class="edition" type="button" data-day="12">12</button>
-        <button class="edition" type="button" data-day="13">13</button>
-        <button class="edition" type="button" data-day="14">14</button>
-        <button class="edition" type="button" data-day="15">15</button>
-        <button class="edition" type="button" data-day="16">16</button>
-        <button class="edition" type="button" data-day="17">17</button>
-        <button class="edition" type="button" data-day="18">18</button>
-        <button class="edition" type="button" data-day="19">19</button>
-        <button class="edition" type="button" data-day="20">20</button>
-        <button class="edition" type="button" data-day="21">21</button>
-        <button class="edition" type="button" data-day="22">22</button>
-        <button class="edition" type="button" data-day="23">23</button>
-        <button class="edition" type="button" data-day="24">24</button>
-        <button class="edition" type="button" data-day="25">25</button>
-        <button class="edition" type="button" data-day="26">26</button>
-        <button class="edition" type="button" data-day="27">27</button>
-        <button class="edition" type="button" data-day="28">28</button>
-        <button class="edition" type="button" data-day="29">29</button>
-        <button class="edition" type="button" data-day="30">30</button>
-        <button class="edition edition--custom" type="button" data-day="custom" aria-label="Custom words">+</button>
-      </div>
+      <div class="editions__list"></div>
     </section>
 
     <section class="dateline">
@@ -74,52 +42,43 @@
       <span class="dateline__sep">·</span>
       <span class="dateline__topic">Study Session</span>
       <span class="dateline__sep">·</span>
-      <span class="dateline__progress">Auto-advance ON &middot; 1 / 12</span>
+      <span class="dateline__progress">— / —</span>
     </section>
 
-    <div class="advance-bar" aria-hidden="true"><div class="advance-bar__fill"></div></div>
-
-    <article class="entry">
-      <div class="entry__pos">adjective</div>
-      <h2 class="entry__word">ubiquitous</h2>
+    <article class="entry" id="entry">
+      <div class="entry__pos">&nbsp;</div>
+      <h2 class="entry__word">&nbsp;</h2>
       <div class="entry__phonetic">
-        <span class="ipa">/juːˈbɪk.wɪ.təs/</span>
+        <span class="ipa">&nbsp;</span>
         <button class="speak" type="button" aria-label="Listen">▶&nbsp;listen</button>
       </div>
 
-      <p class="entry__lede">
-        도처에 있는, 어디에나 존재하는
-      </p>
+      <p class="entry__lede">&nbsp;</p>
 
       <div class="entry__columns">
         <section>
           <h3 class="kicker">In daily American use</h3>
-          <p>
-            Casual yet faintly formal — reached for when something feels so widespread it is inescapable: <em>"Avocado toast became ubiquitous around 2015."</em> Carries a small trace of mild exasperation; rarely neutral.
-          </p>
+          <p class="entry__american">&nbsp;</p>
         </section>
 
         <section>
           <h3 class="kicker">In TOEFL reading</h3>
-          <p>
-            Common in academic passages on technology adoption, species distribution, and cultural phenomena. Synonyms tested in vocabulary questions: <em>omnipresent, pervasive, prevalent, widespread.</em>
-          </p>
+          <p class="entry__toefl">&nbsp;</p>
         </section>
       </div>
 
-      <blockquote class="entry__quote">
-        "Smartphones have become <em>ubiquitous</em> in modern society — they shape not only how we communicate, but how we remember."
-      </blockquote>
+      <blockquote class="entry__quote">&nbsp;</blockquote>
     </article>
 
     <nav class="pager">
       <button class="pager__prev" type="button">◀&nbsp;Previous</button>
       <div class="pager__center">
-        <button class="pager__pause" type="button" aria-label="Pause">❚❚&nbsp;Pause</button>
-        <span class="pager__count">1 / 12</span>
+        <button class="pager__pause" type="button" aria-label="Pause TTS">❚❚&nbsp;Pause</button>
+        <span class="pager__count">— / —</span>
       </div>
       <button class="pager__next" type="button">Next&nbsp;▶</button>
     </nav>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>
