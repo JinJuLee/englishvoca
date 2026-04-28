@@ -1,0 +1,34 @@
+{
+  "sections": [
+    {
+      "id": "vocabulary",
+      "title": "Vocabulary",
+      "description": "The core word list — one Day at a time.",
+      "days": 30
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "description": "Words encountered in reading passages.",
+      "days": 0
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "description": "Words for writing tasks.",
+      "days": 0
+    },
+    {
+      "id": "speaking",
+      "title": "Speaking",
+      "description": "Words for speaking tasks.",
+      "days": 0
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "description": "Words encountered in listening passages.",
+      "days": 0
+    }
+  ]
+}

@@ -8,4 +8,8 @@ dist/
 
 # Source PDFs (too large for git, kept locally)
 *.pdf
-data/raw/
+
+# All vocabulary data stays local — copyright stays with original publishers.
+# Only the schema example under data/example/ is committed.
+data/*/
+!data/example/

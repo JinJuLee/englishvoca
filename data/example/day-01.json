@@ -1,0 +1,40 @@
+{
+  "section": "vocabulary",
+  "day": 1,
+  "title": "Day 01",
+  "topic": "Foundation Words for Reading",
+  "words": [
+    {
+      "id": "ubiquitous",
+      "word": "ubiquitous",
+      "pos": "adj.",
+      "ipa": "/juːˈbɪk.wɪ.təs/",
+      "synonyms": ["omnipresent", "pervasive", "prevalent", "widespread"],
+      "korean": "도처에 있는, 어디에나 존재하는",
+      "americanUsage": "Casual yet faintly formal — reached for when something feels so widespread it is inescapable. Carries a small trace of mild exasperation; rarely neutral. Common in tech and culture commentary.",
+      "toeflContext": "Common in academic passages on technology adoption, species distribution, and cultural phenomena. Tested synonyms in vocabulary questions: omnipresent, pervasive, prevalent, widespread.",
+      "examples": [
+        {
+          "en": "Smartphones have become ubiquitous in modern society — they shape not only how we communicate, but how we remember.",
+          "ko": "스마트폰은 현대 사회에서 어디에나 존재한다 — 그것은 우리가 어떻게 소통하는지뿐 아니라, 어떻게 기억하는지까지 형성한다."
+        }
+      ]
+    },
+    {
+      "id": "mitigate",
+      "word": "mitigate",
+      "pos": "v.",
+      "ipa": "/ˈmɪt.ɪ.ɡeɪt/",
+      "synonyms": ["alleviate", "ease", "lessen", "moderate", "reduce"],
+      "korean": "완화하다, 누그러뜨리다",
+      "americanUsage": "Formal register — used in policy, legal, medical, and environmental contexts. You'd say 'mitigate the damage' but rarely 'mitigate my hunger.' Sounds bureaucratic in casual speech.",
+      "toeflContext": "Frequent in academic passages about environmental policy, public health, risk management. Often paired with 'risk', 'effects', 'damage'. Tested synonyms: alleviate, lessen, ease.",
+      "examples": [
+        {
+          "en": "Wetlands mitigate the impact of flooding by absorbing excess rainwater before it reaches populated areas.",
+          "ko": "습지대는 빗물이 인구 밀집 지역에 도달하기 전에 흡수함으로써 홍수의 영향을 완화한다."
+        }
+      ]
+    }
+  ]
+}
