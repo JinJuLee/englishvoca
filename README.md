@@ -6,16 +6,16 @@ The interface borrows from print: classic serifs, double rules, a blackletter ma
 
 ## What it does
 
-- **Index** — Today's words laid out as a newspaper index. Per-row TTS, status check.
-- **Study** — One word at a time. Auto-advance, paced by content. English read aloud while the Korean meaning waits a beat.
-- **Add** — A "Letter to the Editor" form for pulling words out of reading, listening, or writing practice.
-- **Editions** — Day 01 through Day 30 (and a Custom bucket), selectable individually or in groups.
+- **Index** — Today's words laid out as a newspaper index. Per-row TTS button reads the English headword aloud.
+- **Study** — One word at a time. The English headword is read in a continuous loop (speak → 1-second gap → speak again → …) until you advance. The Korean meaning fades in the moment the first read ends, so the reveal lands right as the second read begins. Pause the loop without changing word; click Next/Prev when ready.
+- **Test** — 8-option multiple-choice quiz drawn from the selected days. One English headword + ▶ TTS; the four-by-two grid of Korean answers shuffles each round. Score in-memory only.
+- **Editions** — Day 01 through Day 30 (and a Custom bucket), click to toggle. Selection persists in localStorage and is shared across all three modes.
 
 ## Design choices
 
 - **No paid API.** Pronunciation uses the browser's built-in Web Speech API; audio is free. Word entries are written by the user (or with help from a local LLM session — see *Adding words* below).
 - **English-only audio.** Korean meaning is shown, never read. The point is to drill the English sound; reading the Korean adds noise.
-- **Variable auto-advance.** Wait time scales with Korean meaning length so you don't get rushed on long definitions or stalled on short ones.
+- **TTS-paced reveal.** The Korean meaning fades in tied to the speech engine's first `onend` event — no fixed timer, so it adapts to short and long words alike.
 - **Sections → Days → Words.** The same hierarchy works for the core word list, for words you scrape from a Reading passage, and for any other section. Build only what you need.
 
 ## Architecture
@@ -67,9 +67,9 @@ Two paths:
 
 Claude fills IPA, Korean, American usage, TOEFL context, and an example sentence, and writes the entry into the right Day file. Costs nothing beyond your existing Claude subscription — no API key, no per-word charges.
 
-**2. Through the Add page (manual).** Open `add.html`, fill in the fields by hand, and save the JSON. Useful when you want full control over wording.
+**2. Hand-edit the JSON.** Each Day file is plain JSON — open `data/{section}/day-NN.json` in any editor and add an entry directly.
 
-Future: when you have an Anthropic API key, the Add page's *▶ Look up* button can be wired directly to the Claude API for one-click drafts.
+Future: when you have an Anthropic API key, a one-click "Look up" button can be wired directly to the Claude API for in-app drafts.
 
 ## Copyright
 
