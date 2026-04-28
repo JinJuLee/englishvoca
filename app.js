@@ -222,9 +222,9 @@ function showStudyWord(word) {
   lede.textContent = word.korean || '';
   void lede.offsetHeight; // force reflow
   setTimeout(() => {
-    lede.style.transition = 'opacity 0.55s ease';
+    lede.style.transition = 'opacity 0.6s ease';
     lede.style.opacity = '1';
-  }, 1000);
+  }, 1500);
 
   // start the TTS loop unless paused
   if (!study.paused) startLoop(word.word, { gapMs: 1000 });
@@ -302,9 +302,10 @@ function shuffle(arr) {
   return a;
 }
 
-function buildOptions(correct, pool) {
+function buildOptions(correct, pool, count = 8) {
   const others = pool.filter(w => w.id !== correct.id);
-  const distractors = shuffle(others).slice(0, 3).map(w => w.korean);
+  const need = count - 1;
+  const distractors = shuffle(others).slice(0, Math.min(need, others.length)).map(w => w.korean);
   return shuffle([correct.korean, ...distractors]);
 }
 

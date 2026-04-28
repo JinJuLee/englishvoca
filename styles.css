@@ -503,10 +503,10 @@ a:hover { color: var(--accent); }
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  max-width: 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
   counter-reset: opt;
 }
 .quiz__options li { counter-increment: opt; }
@@ -714,4 +714,6 @@ a:hover { color: var(--accent); }
   .edition { width: 26px; height: 26px; font-size: 12px; }
   .field-group { grid-template-columns: 1fr; gap: 0; }
   .field--lookup input { font-size: 24px; }
+  .quiz__options { grid-template-columns: 1fr; }
+  .quiz__word { font-size: 56px; }
 }
