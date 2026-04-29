@@ -61,11 +61,14 @@ See [`data/example/day-01.json`](data/example/day-01.json) for a working sample.
 
 Two paths:
 
-**1. Through Claude Code (recommended for now).** Open this repo in a Claude Code session and ask:
+**1. Through Claude Code (recommended for now).** Open this repo in a Claude Code session and ask in plain language:
 
 > Add "serendipity" to vocabulary Day 30.
+> Custom day에 serendipity 추가해줘.
+> vocabulary Day 30에 propagate 넣어줘.
+> Day 5에서 'accord' 빼줘.
 
-Claude fills IPA, Korean, American usage, TOEFL context, and an example sentence, and writes the entry into the right Day file. Costs nothing beyond your existing Claude subscription — no API key, no per-word charges.
+Claude fills IPA, Korean, American usage, TOEFL context, and an example sentence, and writes the entry into the right Day file (or removes it). Costs nothing beyond your existing Claude subscription — no API key, no per-word charges.
 
 **2. Hand-edit the JSON.** Each Day file is plain JSON — open `data/{section}/day-NN.json` in any editor and add an entry directly.
 
